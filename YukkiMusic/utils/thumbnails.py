@@ -73,7 +73,7 @@ async def gen_thumb(videoid):
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.2)
-        background.paste(progress, (0, 0))
+        image2.paste(progress, (0, 0))
         draw = ImageDraw.Draw(background)
         font = ImageFont.truetype("assets/font2.ttf", 40)
         font2 = ImageFont.truetype("assets/font2.ttf", 70)
