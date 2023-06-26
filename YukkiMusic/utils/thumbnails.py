@@ -71,9 +71,9 @@ async def gen_thumb(videoid):
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2
+        background.paste(progress, (0, 0))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.2)
-        background.paste(image2, (0, 0))
         draw = ImageDraw.Draw(background)
         font = ImageFont.truetype("assets/font2.ttf", 40)
         font2 = ImageFont.truetype("assets/font2.ttf", 70)
