@@ -70,7 +70,7 @@ async def gen_thumb(videoid):
         progress = Image.open(f"assets/progress.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        enhancer = ImageEnhance.Brightness(background)
+        enhancer = ImageEnhance.Brightness(image2)
         image2 = enhancer.enhance(0.2)
         progress.paste(image2, (0, 0))
         draw = ImageDraw.Draw(image2)
